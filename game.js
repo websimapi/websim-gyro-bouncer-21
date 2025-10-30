@@ -170,7 +170,7 @@ function update(deltaTime) {
         }
     }
 
-    platformManager.update(cameraY, player.body.position.y);
+    platformManager.update(cameraY, player.body.position.y, score);
     
     if (!inSafeZone && player.body.position.y > cameraY + UI.canvas.height + player.height) {
         gameState = 'gameOver';
@@ -267,4 +267,3 @@ export function createAudioContext() {
         audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     }
 }
-
